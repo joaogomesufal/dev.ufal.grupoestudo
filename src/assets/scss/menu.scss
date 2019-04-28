@@ -1,0 +1,232 @@
+$menuBackgroundColor: #04172D;
+$menuLinksColor: #4ce278;
+$menuLinksColorHover: #4ce278;
+$menuOutilneColor: #dc5ce7;
+$title-color: #4ce278 ;
+$title-description-color: #dc5ce7;
+#menu {
+  font-family: monospace;
+}
+
+@keyframes blowAnimation {
+  0% {
+    text-shadow: 0px 0px 4px $menuOutilneColor;
+    color: $menuOutilneColor;
+  }
+
+  50% {
+    text-shadow: 0px 0px 0px $menuOutilneColor;
+    opacity: 0;
+  }
+
+  100% {
+    text-shadow: 0px 0px 4px $menuOutilneColor;
+    color: $menuOutilneColor;
+  }
+}
+
+
+@media screen and (min-width: 412px) {
+  #menu {
+    background-color: $menuBackgroundColor;
+    border-bottom: 2px solid $menuLinksColor;
+    padding-bottom: 3px;
+    #menuTitle {
+      width: 100%;
+      display: block;
+      padding: 10px 20px;
+      text-align: center;
+      h1 {
+        color: $title-color;
+        display: inline-block;
+        font-size: 18px;
+      }
+      h2{
+        display: inline-block;
+        font-weight: 500;
+        font-size: 14px;
+        color: $title-description-color;
+        margin-left: 8px;
+
+        i {
+          color: $title-description-color;
+        }
+
+        span {
+          display: inline-block;
+          animation-name: blowAnimation;
+          animation-duration: 500ms;
+          animation-iteration-count: infinite;
+
+          color: $title-color;
+          font-weight: bold;
+          margin-bottom: 2px;
+        }
+        //&:before {
+        //  content: '';
+        //  display: inline-block;
+        //  height: 10px;
+        //  width: 10px;
+        //  border-radius: 10px;
+        //  margin-right: 8px;
+        //  background-color: $title-description-color;
+        //}
+      }
+    }
+
+    #menuLinks {
+      position: relative;;
+      #collapseUp, #collapseDown {
+        display: none;
+      }
+
+      nav {
+        list-style: none;
+        position: relative;
+        display: block;
+        max-width: 1010px;
+        margin: 0 auto;
+
+        li {
+          display: inline-block;
+          margin: 0px;
+          padding: 0px;
+          a {
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            color: $menuLinksColor;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            outline-color: $menuOutilneColor;
+
+            &:hover, &:focus, &:active {
+              color: $menuOutilneColor;
+              i {
+                color: $menuOutilneColor;
+              }
+            }
+
+            i {
+              color: $menuLinksColor;
+              min-width: 20px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+@media screen and (max-width: 412px) {
+  #menu {
+    background-color: $menuBackgroundColor;
+    text-align: center;
+    display: block;
+
+
+    &.expanded {
+      border-bottom: 2px solid $menuLinksColor;
+      padding-bottom: 3px;
+    }
+    #menuTitle {
+      width: 100%;
+      display: block;
+      padding: 10px 20px;
+      h1 {
+        color: $title-color;
+        display: inline-block;
+
+        i {
+          color: $title-color;
+          font-weight: bold;
+          margin-bottom: 2px;
+        }
+      }
+      h2{
+        display: inline-block;
+        font-weight: 500;
+        font-size: 14px;
+        color: $title-description-color;
+        margin-left: 8px;
+
+        i {
+          color: $title-description-color;
+        }
+
+        span {
+          display: inline-block;
+          animation-name: blowAnimation;
+          animation-duration: 500ms;
+          animation-iteration-count: infinite;
+
+          color: $title-color;
+          font-weight: bold;
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    #menuLinks {
+      position: relative;
+      text-align: left;
+      #collapseUp, #collapseDown {
+        background: $menuLinksColor;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 5px 0px;
+        outline-color: $menuOutilneColor;
+
+        &:hover, &:focus, &:active {
+          background-color: $menuOutilneColor;
+        }
+
+        i {
+          padding: 0px;
+          margin: 0px 8px 3px 0px;
+        }
+
+
+      }
+
+      nav {
+        list-style: none;
+        position: relative;
+
+        li {
+          display: block;
+          margin: 0px;
+          padding: 0px;
+          a {
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            color: $menuLinksColor;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            outline-color: $menuOutilneColor;
+
+            &:hover, &:focus, &:active {
+              color: $menuOutilneColor;
+              i {
+                color: $menuOutilneColor;
+              }
+            }
+
+            i {
+              color: $menuLinksColor;
+              min-width: 20px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

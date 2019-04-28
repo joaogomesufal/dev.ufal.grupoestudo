@@ -1,0 +1,95 @@
+$blue-dark: #04172D;
+$green: #4ce278;
+$green-dark: #38984c;
+$purple: #dc5ce7;
+$purple-dark: #a94eb4;
+$white: #eee;
+
+$messageConsoleHeaderBackground: $green;
+$messageConsoleHeaderBorderColor: $green-dark;
+$messageConsoleBodyBackground: $blue-dark;
+
+$messageConsoleHeaderColor: $green;
+$messageConsoleBodyColor: $white;
+
+@keyframes blowAnimation {
+  0% {
+    color: $blue-dark;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    color: $blue-dark;
+  }
+}
+
+.message-console {
+  font-family: monospace;
+  background: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .message-console-header {
+    position: relative;
+    background: $messageConsoleHeaderBackground;
+    padding: 4px 8px;
+    border-bottom: 2px solid $messageConsoleHeaderBorderColor;
+    span {
+      animation-name: blowAnimation;
+      animation-duration: 500ms;
+      animation-iteration-count: infinite;
+    }
+    &:before {
+      content: '';
+      height: 10px;
+      width: 10px;
+      background: $green-dark;
+      display: inline-block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+    }
+
+    &:after {
+      content: '';
+      height: 10px;
+      width: 10px;
+      background: $white;
+      position: absolute;
+      display: inline-block;
+      right: 30px;
+      top: 10px;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+    }
+  }
+
+  .message-console-body {
+    background: $messageConsoleBodyBackground;
+    color: $messageConsoleBodyColor;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+.message-console.purple {
+  .message-console-header {
+    background: $purple;
+    border-color: $purple-dark;
+
+    &:before {
+      background: $purple-dark;
+    }
+  }
+}
