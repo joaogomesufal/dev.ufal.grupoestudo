@@ -1,15 +1,21 @@
 <template>
-    <div id="presentations">
-        Apresentações
+    <div id="projects">
+        <v-container>
+            <v-felx md12> 
+                <message-console title="apresentacoes.js" text="Página em desenvolvimento"></message-console>
+            </v-felx>
+        </v-container>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "Presentations"
-    }
+import MessageConsole from '../components/MessageConsole'
+
+export default {
+    name: "presentations",
+    components: {
+        MessageConsole
+    }    
+}
 </script>
 
-<style scoped>
-
-</style>

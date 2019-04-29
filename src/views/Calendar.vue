@@ -1,15 +1,21 @@
 <template>
-    <div id="calendar">
-        Calendário
+    <div id="projects">
+        <v-container>
+            <v-felx md12> 
+                <message-console title="calendario.js" text="Página em desenvolvimento"></message-console>
+            </v-felx>
+        </v-container>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "Calendar"
-    }
+import MessageConsole from '../components/MessageConsole'
+
+export default {
+    name: "calendar",
+    components: {
+        MessageConsole
+    }    
+}
 </script>
 
-<style scoped>
-
-</style>
