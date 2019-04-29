@@ -30,6 +30,12 @@
 <div class="fa-codepen"></div>
 
 <script>
+let msg = new SpeechSynthesisUtterance()
+let voices = window.speechSynthesis.getVoices()
+msg.voice = voices[16]
+msg.rate = 1
+msg.pitch = 1
+
 export default {
     data () {
         return {
@@ -56,11 +62,6 @@ export default {
       },
 
       speek(message) {
-          let msg = new SpeechSynthesisUtterance();
-          let voices = window.speechSynthesis.getVoices();
-          msg.voice = voices[16];
-          msg.rate = 1;
-          msg.pitch = 1;
           msg.text = message;
           speechSynthesis.speak(msg);
       }
